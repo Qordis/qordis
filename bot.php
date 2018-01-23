@@ -9,10 +9,19 @@ try {
     $bot->command('ping', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
-    $bot->command('start', function ($message) use ($bot) {
-    $bot->sendMessage($message->getChat()->getId(), 'Дратути уважаемый');
-    });
-    $bot->run();
+
+
+$bot->command('start', function ($message) use ($bot) {
+    $answer = 'Добро пожаловать!';
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+});
+
+
+$bot->command('help', function ($message) use ($bot) {
+    $answer = 'Команды:
+/help - помощ';
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+});
 
 } catch (\TelegramBot\Api\Exception $e) {
     $e->getMessage();
