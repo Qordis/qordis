@@ -20,6 +20,9 @@ try {
     $bot->sendMessage($message->getChat()->getId(), '/pasres - sbros');
     });
 
+
+$bot->run();
+
 } catch (\TelegramBot\Api\Exception $e) {
     $e->getMessage();
 }
