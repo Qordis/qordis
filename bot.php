@@ -9,7 +9,9 @@ try {
     $bot->command('ping', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
-    
+    $bot->command('start', function ($message) use ($bot) {
+    $bot->sendMessage($message->getChat()->getId(), 'Дратути уважаемый');
+    });
     $bot->run();
 
 } catch (\TelegramBot\Api\Exception $e) {
