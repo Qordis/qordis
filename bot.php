@@ -14,5 +14,6 @@ $bot->command('help', function ($message) use ($bot) {
 });
 
 $bot->run();
+echo "OK";
 
 ?>
