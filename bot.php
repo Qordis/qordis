@@ -6,22 +6,20 @@ require_once "vendor/autoload.php";
 
 try {
     $bot = new \TelegramBot\Api\Client($token);
+
+
     $bot->command('ping', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), 'pong!');
     });
 
-
-$bot->command('start', function ($message) use ($bot) {
-    $answer = 'Добро пожаловать!';
-    $bot->sendMessage($message->getChat()->getId(), $answer);
-});
+    $bot->command('start', function ($message) use ($bot) {
+    $bot->sendMessage($message->getChat()->getId(), 'Добро пожаловать!');
+    });
 
 
-$bot->command('help', function ($message) use ($bot) {
-    $answer = 'Команды:
-/help - помощ';
-    $bot->sendMessage($message->getChat()->getId(), $answer);
-});
+    $bot->command('help', function ($message) use ($bot) {
+    $bot->sendMessage($message->getChat()->getId(), '/pasres - сброс пароля');
+    });
 
 } catch (\TelegramBot\Api\Exception $e) {
     $e->getMessage();
